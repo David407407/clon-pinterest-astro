@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PinterestLogo from '../icons/logo.astro'
+import Tableros from '@/components/Tableros';
+import IdeasSinOrganizar from '@/components/IdeasSinOrganizar';
+import MenuCrear from '@/components/MenuCrear';
+
+---
+
+<Layout title="Pinterest">
+	<main class="w-full my-6">
+        <div class="space-y-3">
+            <div class="w-28 mx-auto cursor-pointer rounded-full">
+                <img class="rounded-full" src="/imgs/perfil.jpg" alt="Imagen de perfil">
+            </div>
+
+            <h3 class="text-3xl font-semibold text-center text-gray-800">David Calderón</h3>
+            <div class="text-center text-gray-500 text-xs flex justify-center gap-1 items-center "> 
+                <div class="">
+                    <PinterestLogo clase="w-4 fill-gray-600 h-auto" /> 
+                </div>
+                
+                Darksideinthespace
+            </div>
+
+            <p class="text-sm font-medium text-center text-gray-800">6 seguidores · Siguiendo a 1</p>
+
+            <div class="flex gap-4 justify-center">
+                <button class="rounded-full text-sm px-3 py-3 flex items-center justify-between text-center bg-gray-100 hover:bg-gray-200 transition-all duration-300 text-gray-800 font-medium">Compartir</button>
+
+                <button class="rounded-full text-sm px-3 py-3 flex items-center justify-between text-center bg-gray-100 hover:bg-gray-200 transition-all duration-300 text-gray-800 font-medium">Editar perfil</button>
+            </div>
+        </div>
+        
+        <div class="flex gap-4 text-gray-800 font-medium text-sm justify-center mt-10">
+            <button class="hover:bg-gray-200 p-2 rounded-lg ">Creados</button>
+            <button class="border-b-2 hover:border-black border-black">Guardados</button>
+        </div>
+
+        <div class="flex justify-between mx-4">
+            <button class="text-gray-800 hover:bg-gray-200 transition-colors p-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-horizontal w-6 h-6" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 6l8 0" /><path d="M16 6l4 0" /><path d="M8 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 12l2 0" /><path d="M10 12l10 0" /><path d="M17 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 18l11 0" /><path d="M19 18l1 0" /></svg>
+            </button>
+
+            <MenuCrear client:visible/>
+        </div>
+        
+        <div class="grid">
+            <Tableros client:only />
+            
+            <IdeasSinOrganizar client:only />
+        </div>
+	</main>
+</Layout>
+
+<style is:global>
+	/* .contenedor {
+		width: 1400px;
+		margin: 20px auto;
+		columns: 8;
+		column-gap: 40px;
+	}
+
+	.contenedor .box {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.contenedor .box img {
+		max-width: 100%;
+		border-radius: 15px;
+	} */
+</style>

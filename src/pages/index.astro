@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Contenedor from '../components/Contenedor'
+
+---
+
+<Layout title="Pinterest">
+	<main class="xl:w-[90%] md:w-[85%] w-[60%]  mx-auto my-2 ">
+		<Contenedor client:only/>
+	</main>
+</Layout>
+
+<style is:global>
+	/* .contenedor {
+		width: 1400px;
+		margin: 20px auto;
+		columns: 8;
+		column-gap: 40px;
+	}
+
+	.contenedor .box {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.contenedor .box img {
+		max-width: 100%;
+		border-radius: 15px;
+	} */
+</style>
